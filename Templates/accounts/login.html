@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
 
 {% block content %}
 <section class="section-conten padding-y" style="min-height:84vh">
@@ -35,6 +38,27 @@
                     <button type="submit" class="btn btn-primary btn-block"> Login </button>
                 </div> <!-- form-group// -->
             </form>
+            <hr>
+            <div class="socialLogIn">
+                <div class="socialTitle">
+                    <p style="text-align:center;">or continue with</p>
+                </div>
+                <br>
+                <div class="socialBtns" style="display:flex;flex-direction:row;justify-content:space-between;width:60%;margin:auto;">
+                    <a href="{% provider_login_url 'google' method='oauth2' %}" class="google">
+                        <img src="{% static 'images/googleLogo.png' %}" alt="" width="20px">
+                    </a>
+                    <a href="#" class="apple">
+                        <img src="{% static 'images/AppleLogo.svg' %}" alt="" width="20px">
+                    </a>
+                    <a href="#" class="instagram">
+                        <img src="{% static 'images/InstagramLogo.webp' %}" alt="" width="20px">
+                    </a>
+                    <a href="{% provider_login_url 'facebook' method='oauth2' %}" class="facebook">
+                        <img src="{% static 'images/facebooklogo.png' %}" alt="" width="20px">
+                    </a>
+                </div>
+            </div>
         </div> <!-- card-body.// -->
     </div> <!-- card .// -->
 

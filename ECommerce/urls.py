@@ -20,7 +20,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('securelogin/', admin.site.urls),
     path('', views.home, name="home"),
     # Store
     path("store/", include('store.urls')),
@@ -28,6 +29,10 @@ urlpatterns = [
     path("cart/", include('carts.urls')),
     # Accounts
     path("accounts/", include('accounts.urls')),
+    path("socialaccounts/", include('allauth.urls')),
     # Orders
     path('orders/', include('orders.urls')),
+    # socialActivation
+    path('socialActivate/', views.socialActivate, name="socialActivation"),
+
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -54,6 +54,28 @@
                 {{ form.email.errors }}
                 {{ form.non_field_errors }}
             </form>
+            <hr>
+            <div class="socialLogIn">
+                <div class="socialTitle">
+                    <p style="text-align:center;">or continue with</p>
+                </div>
+                <br>
+                <div class="socialBtns"
+                    style="display:flex;flex-direction:row;justify-content:space-between;width:60%;margin:auto;">
+                    <a href="#" class="google">
+                        <img src="{% static 'images/googleLogo.png' %}" alt="" width="20px">
+                    </a>
+                    <a href="#" class="apple">
+                        <img src="{% static 'images/AppleLogo.svg' %}" alt="" width="20px">
+                    </a>
+                    <a href="#" class="instagram">
+                        <img src="{% static 'images/InstagramLogo.webp' %}" alt="" width="20px">
+                    </a>
+                    <a href="#" class="facebook">
+                        <img src="{% static 'images/facebooklogo.png' %}" alt="" width="20px">
+                    </a>
+                </div>
+            </div>
         </article><!-- card-body.// -->
     </div> <!-- card .// -->
     <p class="text-center mt-4">Have an account? <a href="{% url 'login' %}">Log In</a></p>
